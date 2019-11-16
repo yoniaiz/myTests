@@ -42,6 +42,19 @@ export class DateAndTime {
     return _timezone.get(this).timezone;
   }
 
+  static compareDates(date1, date2) {
+    if ((date1 && date2) instanceof DateAndTime) {
+      return date1.dateAndTime > date2.dateAndTime;
+    }
+    return "invalid data";
+  }
+  static checkIfequals(date1, date2) {
+    if ((date1 && date2) instanceof DateAndTime) {
+      return date1.localDateTime === date2.localDateTime;
+    }
+    return "invalid data";
+  }
+
   setDate(date = null) {
     //   if _timezone not updated yet then update it.
     this.setTimeZone();
@@ -74,17 +87,13 @@ export class DateAndTime {
       const today = DateTime.local();
       _localDateTime.set(this, {
         ..._localDateTime.get(this),
-        time: today
-          .setLocale("en-Ca")
-          .toLocaleString(this.timeFormat)
+        time: today.setLocale("en-Ca").toLocaleString(this.timeFormat)
       });
 
       const utcToday = today.toUTC();
       _utcDateTime.set(this, {
         ..._utcDateTime.get(this),
-        time: utcToday
-          .setLocale("en-Ca")
-          .toLocaleString(this.timeFormat)
+        time: utcToday.setLocale("en-Ca").toLocaleString(this.timeFormat)
       });
     }
     this.setDateAndTime();
@@ -176,6 +185,14 @@ export class DateAndTime {
     this.setAllDates();
   }
 
+  setMenulyData(date, time) {
+    //   initialize all objects to current date and time
+    this.setDate(date);
+    this.setTime(time);
+    this.setDateAndTime();
+    this.setAllDates();
+  }
+
   getJsDateObj() {
     console.log(DateTime.fromISO(_dateAndTime).toJSDate());
   }
@@ -207,17 +224,6 @@ export class DateAndTime {
 
   updateNewDateAndTime(newTimeObj) {
     this.setDate(newTimeObj.setLocale("en-Ca").toFormat(this.dateFormat));
-    this.setTime(
-      newTimeObj
-        .setLocale("en-Ca")
-        .toLocaleString(this.timeFormat)
-    );
-  }
-
-  static compareDates(date1, date2) {
-    if ((date1 && date2) instanceof DateAndTime) {
-      return date1.dateAndTime > date2.dateAndTime;
-    }
-    return "invalid data";
+    this.setTime(newTimeObj.setLocale("en-Ca").toLocaleString(this.timeFormat));
   }
 }

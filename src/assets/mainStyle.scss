@@ -1,11 +1,157 @@
-html, body {
+$font-stack: Helvetica,
+sans-serif;
+$primary-color: #333;
+$white: #FFFFFF;
+$light-gray: #EBEBEB;
+$primary-white: #f8f8f8;
+$primary-dark: #707070;
+$primary-darker: #717171;
+$primary-info: #1792D2;
+$primary-dark-blue: #143774;
+
+html,
+body {
     height: 100%;
+    font-family: 'Ubuntu', sans-serif;
 }
+
 body {
     margin: 0;
+    font-size: 1.125rem;
 }
+
+img {
+    max-width: 100%;
+    min-width: 245px;
+    display: block;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    color: $primary-dark-blue;
+    margin-top: 0;
+}
+
+h1 {
+    color: $primary-dark-blue;
+    font-size: 2rem;
+    margin: 0;
+}
+
+Link {
+    color: $primary-info;
+
+    &:hover,
+    &:focus {
+        color: #143774;
+    }
+}
+
+strong {
+    font-weight: 700;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.main-title {
+    margin: 0;
+}
+
+// LOGO sub title
+.subtitle {
+    font-weight: 700;
+    color: #1792D2;
+    font-size: .75rem;
+    margin: 0;
+}
+
+.article-title {
+    font-size: 1.5rem;
+}
+
+.read-more,
+.article-info {
+    font-size: .875rem;
+}
+
+.article-info {
+    color: $primary-dark;
+    margin: 2em 0;
+}
+
+.read-more {
+    color: $primary-info;
+    text-decoration: none;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+        color: $primary-dark-blue;
+        text-decoration: underline;
+    }
+}
+
+header {
+    padding: 2em 0;
+    background-color: $primary-white;
+    text-align: center;
+
+    nav {
+        .nav-list {
+            list-style: none;
+            padding: 0;
+
+
+            .nav-list-item {
+                .nav-list-item-link {
+                    text-decoration: none;
+                    color: $primary-dark;
+                    padding: .25em 0;
+                    font-weight: 700;
+
+                    &:hover,
+                    &:focus {
+                        color: $primary-info;
+                    }
+                }
+
+                .current-page {
+                    border-bottom: 1px solid $primary-dark;
+
+                    &:hover,
+                    &:focus {
+                        color: $primary-dark;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+footer {
+    background-color: $primary-dark-blue;
+    color: $primary-white;
+    text-align: center;
+    padding: 3em 0;
+}
+
 .flex-container {
-    // height: 100%;
     padding: 0;
     margin: 0;
     display: -webkit-box;
@@ -16,11 +162,127 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .flex-row {
     width: auto;
 }
+
 .dateTimeInput {
     padding: 5px;
     width: 200px !important;
     margin: 10px;
+}
+
+.article-feature {
+    border-bottom: $primary-dark 1px solid;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+}
+
+.article-recent {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+
+    .article-recent-main {
+        order: 2
+    }
+
+    .article-recent-secondary {
+        order: 1
+    }
+}
+
+@media (min-width: 675px) {
+    .d-flex {
+        flex-direction: row;
+    }
+
+    .article-recent {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .article-recent-main {
+            width: 68%;
+        }
+
+        .article-recent-secondary {
+            width: 30%;
+        }
+
+        .article-image {
+            width: 100%;
+            min-height: 250px;
+            object-fit: cover;
+        }
+    }
+
+    main {
+        width: 70%
+    }
+
+    aside {
+        width: 25%
+    }
+
+    img {
+        min-width: 0px;
+    }
+
+    header {
+        .nav-list {
+            display: flex;
+            align-items: center;
+
+            .nav-list-item {
+                margin-left: 2em;
+            }
+        }
+    }
+
+    .article-feature {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .article-image {
+        order: -2;
+    }
+
+    .article-info {
+        order: -1;
+    }
+
+}
+
+// WIDGETS
+.sidebar-widget {
+    border: 20px solid #efefef;
+    margin-bottom: 2em;
+}
+
+.widget-title,
+.widget-recent-post-title {
+    font-size: 1rem;
+}
+
+.widget-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+.widget-recent-post {
+    display: flex;
+    flex-flow: column;
+    border-bottom: 1px solid $primary-dark;
+    margin-bottom: 1em;
+}
+
+.widget-recent-post:last-child {
+    border-bottom: 0;
+    margin: 0;
+}
+
+.widget-image {
+    order: -1;
 }

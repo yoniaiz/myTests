@@ -1,0 +1,4 @@
+export const  uiConstants = {
+    IMAGES_SAVE:'IMAGES_SAVE',
+    IMAGES_SAVE_FALIURE:'IMAGES_SAVE_FALIURE'
+}
