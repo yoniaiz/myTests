@@ -8,7 +8,7 @@ import { imagesSaveAction } from "../../actions";
 // require syntax
 class MainPage extends React.Component {
   componentDidMount() {
-    this.props.imagesSaveAction('food');
+    this.props.imagesSaveAction("food");
   }
 
   generateTitle = () => {

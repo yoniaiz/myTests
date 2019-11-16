@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensedw');
+$shadow-color : #4d736f;
+$facebook-blue : #4267b2;
+$facebook-blue-hover : #2b54a7;
+$facebook-blue-active : #1d4698;
+$facebook-text-shadow : #3359a5;
+
+$facebook-light-blue : #f6f7f9;
+$facebook-light-blue-hover : #ced0d4;
+$facebook-light-blue-active : #d8dede;
+$facebook-light-text-shadow : #3359a5;
+
+.button-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+.button-container button {
+    outline: none;
+    margin: 10px;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #00b3b4;
+    margin: 10px auto;
+}
+.buttons:last-child{
+    border-bottom: none;
+}
+
+
+/* =========================
+    facebook buttons
+   ========================= */
+.facebook-style-btn {
+    border-radius: 2px;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+}
+
+.facebook-style-dark {
+    -moz-box-shadow: inset 0 1px 0 0 $shadow-color;
+    -webkit-box-shadow: inset 0 1px 0 0 $shadow-color;
+    box-shadow: inset 0 1px 0 0 $shadow-color;
+    background-color: $facebook-blue;
+    border: 1px solid $facebook-blue;
+    color: white;
+    text-shadow: 0 1px 0 $facebook-text-shadow;
+
+    &:hover {
+        background-color: $facebook-blue-hover;
+    }
+
+    &:active {
+        background: $facebook-blue-active;
+        border-color: $facebook-blue-active;
+    }
+}
+
+.facebook-style-light {
+    background: $facebook-light-blue;
+    border: 1px solid #ced0d4;
+    color: #4b4f56;
+
+    &:hover {
+        background-color: $facebook-light-blue-hover;
+    }
+
+    &:active {
+        background: $facebook-light-blue-active;
+        border-color: $facebook-light-blue-active;
+    }
+}
+
+
+/* =========================
+    3D buttons 1
+   ========================= */
+.btn-3d-1 {
+    position: relative;
+    background: orangered;
+    border: none;
+    color: white;
+    padding: 15px 24px;
+    font-size: 1.4rem;
+    box-shadow: -6px 6px 0 hsl(16, 100%, 30%);
+    outline: none;
+
+    &:hover {
+        background: hsl(16, 100%, 45%);
+    }
+
+    &:active {
+        background: hsl(16, 100%, 40%);
+        top: 3px;
+        left: -3px;
+        box-shadow: -3px 3px 0 hsl(16, 100%, 30%);
+    }
+
+}
+
+.btn-3d-1::before {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 0;
+    width: 0;
+
+    border: solid 6px transparent;
+    border-right: solid 6px hsl(16, 100%, 30%);
+    border-left-width: 0;
+    background: none;
+    top: 0;
+    left: -6px;
+}
+
+.btn-3d-1:active::before {
+    border: solid 3px transparent;
+    border-right: solid 3px hsl(16, 100%, 30%);
+    border-left-width: 0;
+    left: -3px;
+}
+
+.btn-3d-1::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 0;
+    width: 0;
+
+    border: solid 6px transparent;
+    border-top: solid 6px hsl(16, 100%, 30%);
+    border-bottom-width: 0;
+    right: 0;
+    bottom: -6px;
+}
+
+.btn-3d-1:active::after {
+    border: solid 3px transparent;
+    border-top: solid 3px hsl(16, 100%, 30%);
+    border-bottom-width: 0;
+    bottom: -3px;
+}
+
+/* =========================
+    3D buttons 2
+   ========================= */
+
+.btn-3d-2 {
+    position: relative;
+    background: #ecd300;
+    background: -webkit-radial-gradient(hsl(54, 100%, 50%), hsl(54, 100%, 40%));
+    background: -o-radial-gradient(hsl(54, 100%, 50%), hsl(54, 100%, 40%));
+    background: -moz-radial-gradient(hsl(54, 100%, 50%), hsl(54, 100%, 40%));
+    background: radial-gradient(hsl(54, 100%, 50%), hsl(54, 100%, 40%));
+
+    font-size: 1.4rem;
+    text-shadow: 0px -1px 0 #c3af07;
+    color: white;
+    border: solid 1px hsl(54, 100%, 20%);
+    border-radius: 100%;
+    height: 120px;
+    width: 120px;
+    z-index: 4;
+
+    box-shadow: inset 0 1px 0 hsl(54, 100%, 50%),
+        0 2px 0 hsl(54, 100%, 20%),
+        0 3px 0 hsl(54, 100%, 18%),
+        0 4px 0 hsl(54, 100%, 16%),
+        0 5px 0 hsl(54, 100%, 14%),
+        0 6px 0 hsl(54, 100%, 12%),
+        0 7px 0 hsl(54, 100%, 10%),
+        0 8px 0 hsl(54, 100%, 8%),
+        0 9px 0 hsl(54, 100%, 6%);
+
+
+    &:hover {
+        background: -webkit-radial-gradient(hsl(54, 100%, 45%), hsl(54, 100%, 35%));
+        background: -o-radial-gradient(hsl(54, 100%, 45%), hsl(54, 100%, 35%));
+        background: -moz-radial-gradient(hsl(54, 100%, 45%), hsl(54, 100%, 35%));
+        background: radial-gradient(hsl(54, 100%, 45%), hsl(54, 100%, 35%));
+    }
+
+    &:active {
+        background: -webkit-radial-gradient(hsl(54, 100%, 43%), hsl(54, 100%, 33%));
+        background: -o-radial-gradient(hsl(54, 100%, 43%), hsl(54, 100%, 33%));
+        background: -moz-radial-gradient(hsl(54, 100%, 43%), hsl(54, 100%, 33%));
+        background: radial-gradient(hsl(54, 100%, 43%), hsl(54, 100%, 33%));
+
+        top: 2px;
+
+        box-shadow: inset 0 1px 0 hsl(54, 100%, 50%),
+            0 2px 0 hsl(54, 100%, 20%),
+            0 3px 0 hsl(54, 100%, 18%),
+            0 4px 0 hsl(54, 100%, 16%),
+            0 5px 0 hsl(54, 100%, 14%),
+            0 6px 0 hsl(54, 100%, 12%),
+            0 7px 0 hsl(54, 100%, 10%);
+    }
+
+}
+
+
+/* =========================
+    Gradient buttons 
+   ========================= */
+
+
+.gradient-button-1 {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    background-color: #e7eef1;
+    border: solid 10px transparent;
+    border-image: linear-gradient(to top right, orangered, yellow);
+    border-image-slice: 1;
+    color: orangered;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-image: linear-gradient(to top right, orangered, yellow);
+        color: white;
+    }
+}
+
+.gradient-button-2 {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    background-color: #e7eef1;
+    border: solid 4px transparent;
+    border-image: linear-gradient(to right, orangered, transparent);
+    border-image-slice: 1;
+    color: orangered;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-image: linear-gradient(to right, orangered, transparent);
+        color: white;
+        border-right-style: none;
+    }
+}
+
+/* =========================
+    Animated buttons 
+   ========================= */
+
+.animated-button-1 {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 1.4rem;
+    background-color: #00b3b4;
+
+    background-image: url(pattern.png);
+    background-size: 40px 40px;
+    border: solid 1px #555;
+    color: white;
+
+    transition: all ease 0.3s;
+
+    &:hover {
+        animation: loading-button-animation 2s linear infinite;
+    }
+}
+
+@keyframes loading-button-animation {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 40px 0;
+    }
+}
+
+
+.animated-button-2 {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 1.4rem;
+    background-color: #00b3b4;
+    background-size: 40px 40px;
+    border: solid 1px #555;
+    color: white;
+    transition: all ease 0.3s;
+
+    &:hover {
+        padding: 20px 60px 20px 20px;
+    }
+}
+
+.animated-button-2::after {
+    position: absolute;
+    top: 30%;
+    right: 0.6em;
+    content: "»";
+    transition: all ease 0.3s;
+    opacity: 0;
+}
+
+.animated-button-2:hover::after {
+    right: 1.2em;
+    opacity: 1;
+}
+
+/* =========================
+    TOGGLE SWITCH
+   ========================= */
+
+.toggle-1 {
+    font-family: Helvetica, Arial, sans-serif;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px 10px;
+}
+
+.toggle-1__input {
+    display: none;
+}
+
+.toggle-1__button {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    background-color: #f2395a;
+    border: 1px solid #f2395a;
+    color: #ffffff;
+    width: 80px;
+    height: 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.toggle-1__button:before {
+    position: absolute;
+    top: 6px;
+    left: 38px;
+    right: auto;
+    display: inline-block;
+    height: 20px;
+    padding: 0 3px;
+    background-color: #ffffff;
+    color: #f2395a;
+    content: "off";
+    transition: all 0.3s ease;
+}
+
+.toggle-1__input:checked+.toggle-1__button {
+    background-color: #00b3b4;
+    border: 1px solid #00b3b4;
+}
+
+.toggle-1__input:checked+.toggle-1__button:before {
+    left: 5px;
+    content: "on";
+    color: #00b3b4;
+}
+
+
+.toggle-2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px 10px;
+}
+
+.toggle-2__input {
+    display: none;
+}
+
+.toggle-2__button {
+    position: relative;
+    left: 45px;
+    display: inline-block;
+    line-height: 20px;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    color: #aaaaaa;
+    border: 1px solid #cccccc;
+    padding: 5px 10px 5px 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.toggle-2__button:before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: auto;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #cccccc;
+    content: "";
+    transition: all 0.3s ease;
+}
+
+.toggle-2__input:checked+.toggle-2__button {
+    background-color: #00b3b4;
+    border-color: #00b3b4;
+    color: #ffffff;
+}
+
+.toggle-2__input:checked+.toggle-2__button:before {
+    background-color: #ffffff;
+}
+
+@media (max-width: 675px) {
+    .buttons{
+        flex-flow: column;
+        justify-content: center;
+        justify-items: center;
+    }
+    .button-container button{
+        margin: 10px auto; 
+    }
+    .toggle-2__button{
+        left: 0;
+    }
+}

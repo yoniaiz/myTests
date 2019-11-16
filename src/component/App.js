@@ -7,6 +7,7 @@ import Clock from "./Clock";
 import { urls } from "../constants";
 import Header from "./Header/index";
 import { history } from "../helpers/history";
+import { ButtonsDisplayPage } from "./ButtonsDisplayPage";
 
 export default function App(props) {
   return (
@@ -25,6 +26,9 @@ export default function App(props) {
           </Route>
           <Route path={`/${urls.CLOCK_PAGE}`}>
             <Clock />
+          </Route>
+          <Route path={`/${urls.BUTTONS}`}>
+            <ButtonsDisplayPage />
           </Route>
         </div>
       </Router>
