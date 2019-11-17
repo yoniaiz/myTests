@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import moment from "moment";
 import { DatePicker, TimePicker, Button } from "antd";
 
-import { DateAndTime } from "../classes/DateAndTime.class";
+import { DateAndTime } from "../classes/DateAndTime";
 
 import { dateTimeSubmitAction } from "../actions";
 
@@ -28,7 +28,11 @@ class Clock extends React.Component {
 
   resetDateAndTime = () => {
     const dateTime = new DateAndTime();
-    dateTime.setCurrentDate();
+    dateTime.setMenulyData(
+      "America/New_York",
+      "2019-11-19",
+      "18:50:00"
+    )
     this.setState({ date: dateTime.localDateTime.date });
     this.setState({ time: dateTime.localDateTime.time });
     this.setState({ dateTime });
