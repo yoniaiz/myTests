@@ -10,6 +10,7 @@ import { history } from "../helpers/history";
 import { ButtonsDisplayPage } from "./CssProjects/ButtonsDisplayPage/index";
 import Typography from "./CssProjects/Typography";
 import { GameOfLife } from "./Games/GameOfLife";
+import { ClippingImages } from "./CssProjects/ClippingImages";
 
 export default function App(props) {
   return (
@@ -34,6 +35,9 @@ export default function App(props) {
           </Route>
           <Route exect path={`/${urls.TYPOGRAPHY}`}>
             <Typography />
+          </Route>
+          <Route exect path={`/${urls.IMAGES_CLIP}`}>
+            <ClippingImages />
           </Route>
           <Route exect path={`/${urls.GAME_OF_LIFE}`}>
             <GameOfLife />

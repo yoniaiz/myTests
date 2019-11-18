@@ -4,6 +4,7 @@ export const urls = {
   CLOCK_PAGE: "clock",
   BUTTONS: "buttons",
   TYPOGRAPHY: "typography",
+  IMAGES_CLIP: "imageClip",
   GAMES:'games',
   GAME_OF_LIFE:'gameOfLife'
 };
