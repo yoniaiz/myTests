@@ -3,7 +3,9 @@ export const urls = {
   HOOKS_PAGE: "hooks",
   CLOCK_PAGE: "clock",
   BUTTONS: "buttons",
-  TYPOGRAPHY: "typography"
+  TYPOGRAPHY: "typography",
+  GAMES:'games',
+  GAME_OF_LIFE:'gameOfLife'
 };
 
 export const requestUrls = {

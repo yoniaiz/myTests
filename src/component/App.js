@@ -9,6 +9,7 @@ import Header from "./Header/index";
 import { history } from "../helpers/history";
 import { ButtonsDisplayPage } from "./CssProjects/ButtonsDisplayPage/index";
 import Typography from "./CssProjects/Typography";
+import { GameOfLife } from "./Games/GameOfLife";
 
 export default function App(props) {
   return (
@@ -28,11 +29,14 @@ export default function App(props) {
           <Route path={`/${urls.CLOCK_PAGE}`}>
             <Clock />
           </Route>
-          <Route path={`/${urls.BUTTONS}`}>
+          <Route exect path={`/${urls.BUTTONS}`}>
             <ButtonsDisplayPage />
           </Route>
-          <Route path={`/${urls.TYPOGRAPHY}`}>
+          <Route exect path={`/${urls.TYPOGRAPHY}`}>
             <Typography />
+          </Route>
+          <Route exect path={`/${urls.GAME_OF_LIFE}`}>
+            <GameOfLife />
           </Route>
         </div>
       </Router>
