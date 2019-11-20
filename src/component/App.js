@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Router, Route } from "react-router-dom";
+import { Router, Route, Link } from "react-router-dom";
 import MainPage from "./MainPage/index";
 import Weather from "./weather";
 import Hooks from "./Hooks/Hooks";
@@ -11,7 +11,51 @@ import { ButtonsDisplayPage } from "./CssProjects/ButtonsDisplayPage/index";
 import Typography from "./CssProjects/Typography";
 import { GameOfLife } from "./Games/GameOfLife";
 import { ClippingImages } from "./CssProjects/ClippingImages";
+import { topics } from "../constants/urls";
 
+const Topic = ({ match }) => {
+  switch (match.params.topicId) {
+    case "buttons":
+      return <ButtonsDisplayPage />;
+    case "typography":
+      return <Typography />;
+    case "gameOfLife":
+      return <GameOfLife />;
+    default:
+      return <ClippingImages />;
+  }
+};
+const Games = () => {
+  const gamesTopic = topics[1];
+  return (
+    <div className="container text-center main-container">
+      <h1 className="main-title">{gamesTopic.name}</h1>
+      <h3 className="sub-title">{gamesTopic.description}</h3>
+      <div class="navigation-container topBotomBordersIn">
+        {gamesTopic.resources.map(({ name, id }) => {
+          return <Link to={`/${gamesTopic.id}/${id}`}>{name}</Link>;
+        })}
+      </div>
+      <Route path={`/${gamesTopic.id}/:topicId`} component={Topic} />
+    </div>
+  );
+};
+
+const Css = () => {
+  const cssTopic = topics[0];
+  return (
+    <div className="container text-center main-container">
+      <h1 className="main-title">{cssTopic.name}</h1>
+      <h3 className="sub-title">{cssTopic.description}</h3>
+      <div class="navigation-container  brackets">
+        {cssTopic.resources.map(({ name, id }) => {
+          return <Link to={`/${cssTopic.id}/${id}`}>{name}</Link>;
+        })}
+      </div>
+      <Route path={`/${cssTopic.id}/:topicId`} component={Topic} />
+    </div>
+  );
+};
 export default function App(props) {
   return (
     <Fragment>
@@ -21,26 +65,11 @@ export default function App(props) {
           <Route exact path={`/`}>
             <MainPage />
           </Route>
-          <Route exact path={`/${urls.WEATHER_PAGE}`}>
-            <Weather />
+          <Route path={`/${topics[0].id}`}>
+            <Css />
           </Route>
-          <Route exact path={`/${urls.HOOKS_PAGE}`}>
-            <Hooks />
-          </Route>
-          <Route path={`/${urls.CLOCK_PAGE}`}>
-            <Clock />
-          </Route>
-          <Route exect path={`/${urls.BUTTONS}`}>
-            <ButtonsDisplayPage />
-          </Route>
-          <Route exect path={`/${urls.TYPOGRAPHY}`}>
-            <Typography />
-          </Route>
-          <Route exect path={`/${urls.IMAGES_CLIP}`}>
-            <ClippingImages />
-          </Route>
-          <Route exect path={`/${urls.GAME_OF_LIFE}`}>
-            <GameOfLife />
+          <Route path={`/${topics[1].id}`}>
+            <Games />
           </Route>
         </div>
       </Router>
