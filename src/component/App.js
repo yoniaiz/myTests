@@ -13,7 +13,7 @@ import { GameOfLife } from "./Games/GameOfLife";
 import { ClippingImages } from "./CssProjects/ClippingImages";
 import { topics } from "../constants/urls";
 import GlobalStyle from "../styles/GlobalStyle";
-// import { Tetris } from "./Games/Tetris";
+import { Tetris } from "./Games/Tetris";
 import VideoPlayer from "./VideoPlayer";
 
 const Topic = ({ match }) => {
@@ -24,8 +24,8 @@ const Topic = ({ match }) => {
       return <Typography />;
     case "gameOfLife":
       return <GameOfLife />;
-    // case "tetris":
-    //   return <Tetris />;
+    case "tetris":
+      return <Tetris />;
     default:
       return <ClippingImages />;
   }
