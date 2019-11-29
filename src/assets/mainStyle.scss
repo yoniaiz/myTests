@@ -11,6 +11,10 @@ $primary-darker: #717171;
 $primary-info: #1792D2;
 $primary-dark-blue: #143774;
 
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     height: 100%;
@@ -284,9 +288,10 @@ footer {
 }
 
 @media (min-width: 675px) {
-    .navigation-container{
+    .navigation-container {
         flex-direction: row;
     }
+
     .d-flex {
         flex-direction: row;
     }

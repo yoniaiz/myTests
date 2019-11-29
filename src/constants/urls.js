@@ -29,8 +29,10 @@ export const topics = [
       {
         name: "The Game Of Life",
         id: "gameOfLife",
-        url:
-          "https://tylermcginnis.com/an-introduction-to-life-cycle-events-in-react-js/"
+      },
+      {
+        name: "Tetris",
+        id: "tetris",
       },
     ]
   }

@@ -1,7 +1,8 @@
-// body {
-//     background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/squares.png) 
-//   }
-    
+@font-face{
+  font-family: 'Pixel';
+  src: url('font/Pixel-LCD-7.woff') format('woff')
+}  
+  
   .box {
     display: inline-block;       
     border: 1px solid black;
@@ -37,14 +38,3 @@
     margin-top: 20px;
   }
     
-  // h1, h2, h3, h4 {
-  //   color: white;
-  //   margin: auto;
-  //   text-align: center;
-  //   width: 50%;
-  //   margin-top: 10px;
-  // }
-  
-  // h4 {
-  //   margin-top: 0px;
-  // }
